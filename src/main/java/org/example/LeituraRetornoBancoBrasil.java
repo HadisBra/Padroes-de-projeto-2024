@@ -27,11 +27,16 @@ public class LeituraRetornoBancoBrasil implements LeituraRetorno {
         boleto.setCodBanco(vetor[1]);
         boleto.setDataVencimento(LocalDate.parse(vetor[2], FORMATO_DATA));
         boleto.setDataPagamento(LocalDate.parse(vetor[3], FORMATO_DATA).atStartOfDay());
+        boleto.setCpfCliente(vetor[4]);
+        boleto.setValor(Double.parseDouble(vetor[5]));
+        boleto.setMulta(Double.parseDouble(vetor[6]));
+        boleto.setJuros(Double.parseDouble(vetor[7]));
 
         // incluir boletos
         boletos.add(boleto);
 
     }
+
 
     return boletos;
     }

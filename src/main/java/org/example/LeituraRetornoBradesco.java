@@ -33,7 +33,8 @@ public class LeituraRetornoBradesco implements LeituraRetorno {
             var boleto = new Boleto();
             boleto.setId(Integer.parseInt(vetor[0]));
             boleto.setCodBanco(vetor[1]);
-
+            boleto.setAgencia(vetor[2]);
+            boleto.setContaBancaria(vetor[3]);
             try {
 
                 boleto.setDataVencimento(LocalDate.parse(vetor[4], FORMATO_DATA));
@@ -44,6 +45,11 @@ public class LeituraRetornoBradesco implements LeituraRetorno {
                 e.printStackTrace();
                 continue;
             }
+            // replace no cpf (.-)
+            boleto.setCpfCliente(vetor[6]);
+            boleto.setValor(Double.parseDouble(vetor[7]));
+            boleto.setMulta(Double.parseDouble(vetor[8]));
+            boleto.setJuros(Double.parseDouble(vetor[9]));
 
             // incluir boletos
             boletos.add(boleto);

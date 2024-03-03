@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Data // @getter @setter
 public class Boleto {
 
-    private int id;
+    private int id ;
     private String codBanco;
     private LocalDate dataVencimento;
     private LocalDateTime dataPagamento;

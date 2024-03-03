@@ -9,11 +9,10 @@ public class ProcessarBoletos {
     public ProcessarBoletos(Function<String, List<Boleto>> leituraRetorno) {
         this.leituraRetorno = leituraRetorno;
     }
-public void proessar(String nomeArquivo){
-  List<Boleto>boletos=leituraRetorno.apply(nomeArquivo);
-  for (Boleto boleto:boletos){
-      System.out.println(boleto);
-  }
+ void proessar(String nomeArquivo){
+var lista = leituraRetorno.apply("banco-brasil-1.csv");
+     System.out.println(lista);
  }
-
 }
+
+
